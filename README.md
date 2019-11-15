@@ -6,11 +6,13 @@ No maximum login limit with this extension.
 
 ##################################################
 
-Just download this files.
-Go to chrome extensions page.
-Turn on developer mode.
-Upload the folder, that contains this files by clicking on "Load Unpacked"
-Open the extension, and login once.
+1. Just download this files.
+2. Go to chrome extensions page.
+3. Turn on developer mode.
+4. Upload the folder, that contains this files by clicking on "Load Unpacked"
+5. Click on the extension,(Logo of daiict beside the Url box) and login with your id.
+
+##################################################
 That's it.
 Next time when you turn on the browser,
-it will automatically login with your id and there will be no login limits.
+it will automatically login with your id and there will be no maximum login limits.
