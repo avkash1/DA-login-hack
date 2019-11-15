@@ -13,6 +13,7 @@ No maximum login limit with this extension.
 5. Click on the extension,(Logo of daiict beside the Url box) and login with your id.
 
 ##################################################
+
 That's it.
 Next time when you turn on the browser,
 it will automatically login with your id and there will be no maximum login limits.
