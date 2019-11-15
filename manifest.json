@@ -1,0 +1,24 @@
+{
+  "name": "DA login lazy hack",
+  "version": "1.0",
+  "description": "Store your previous login details securly loads up with it on your first launch. Maximum login limit won't be a problem.",
+  "manifest_version": 2,
+  "icons": {
+    "128": "da.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "da.png",
+    "default_title": "DA login lazy hack"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["tabs", "storage", "<all_urls>"]
+}

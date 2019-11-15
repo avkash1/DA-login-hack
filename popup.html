@@ -1,0 +1,122 @@
+<html>
+  <body>
+    <style>
+      body {
+        background: rgba(40, 40, 40, 1);
+        color: white;
+        width: 350px;
+        padding: 20px;
+        font-size: 20px;
+        font-family: "product sans";
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3px;
+      }
+      span {
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 5px;
+        font-size: 18px;
+      }
+      input:focus {
+        outline: transparent;
+      }
+      button {
+        background: rgb(12, 143, 204);
+        padding: 5px;
+        font-size: 18px;
+        color: white;
+        border: 1px solid white;
+        transition: background 0.3s;
+        cursor: pointer;
+      }
+      button:hover {
+        background: rgb(21, 98, 212);
+      }
+      .warning {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+      #status {
+        margin-top: 10px;
+        font-size: 15px;
+        text-align: center;
+      }
+      .ovr {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.6);
+        color: black;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 28px;
+      }
+      .cntnt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .waiting {
+        height: 20px;
+        width: 20px;
+        background: black;
+        animation: anim 2s infinite;
+      }
+
+      @keyframes anim {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <div id="loading" class="ovr">
+      <div class="cntnt">
+        <span>Loading</span>
+        <span class="waiting"></span>
+      </div>
+    </div>
+    <div class="form">
+      <p>
+        <span>DA Id:</span>
+        <span>
+          <input type="text" id="username1" placeholder="Username"" />
+        </span>
+      </p>
+      <p>
+        <span>Password:</span>
+        <span>
+          <input type="password" id="password1" placeholder="Password"" />
+        </span>
+      </p>
+      <p>
+        <button id="login_btn">Login</button>
+      </p>
+      <p>
+        <button id="logout_btn">Logout</button>
+      </p>
+    </div>
+    <div id="status"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
