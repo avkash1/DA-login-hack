@@ -1,6 +1,6 @@
 {
   "name": "DA login lazy hack",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Store your previous login details securly loads up with it on your first launch. Maximum login limit won't be a problem.",
   "manifest_version": 2,
   "icons": {

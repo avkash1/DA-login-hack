@@ -54,6 +54,7 @@
         margin-top: 10px;
         font-size: 15px;
         text-align: center;
+        min-height: 15px;
       }
       .ovr {
         display: none;
@@ -79,6 +80,14 @@
         width: 20px;
         background: black;
         animation: anim 2s infinite;
+      }
+      .footer {
+        padding-top: 10px;
+        display: flex;
+        position: relative;
+        bottom: 0;
+        font-size: 10px;
+        justify-content: space-between;
       }
 
       @keyframes anim {
@@ -115,8 +124,12 @@
       <p>
         <button id="logout_btn">Logout</button>
       </p>
+      <div id="status"></div>
+      <div class="footer">
+        <span>Version 2.0 (beta)</span><span>By Avkash Chevli</span>
+      </div>
     </div>
-    <div id="status"></div>
+
     <script src="popup.js"></script>
   </body>
 </html>

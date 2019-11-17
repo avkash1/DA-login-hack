@@ -30,7 +30,7 @@ window.current = "";
 var intervalLive = false;
 
 var status = "login";
-var uname = "";
+var uname = "1";
 var pass = "";
 var producttype = 0;
 var hackNum = "";
@@ -84,15 +84,15 @@ function dcrpt(unm) {
 chrome.runtime.onMessage.addListener(async function(req, sndr, sendResp) {
   //var d = new Date();
   status = req.status;
-  uname = req.uname;
-  showUname = uname;
+  //uname = req.uname;
+  showUname = req.uname;
   producttype = req.producttype;
   //alert(status + " " + uname + " " + pass);
 
   (function() {
     var resp = "";
     if (status == "login") {
-      uname = encrpt(uname);
+      //uname = encrpt(uname);
       pass = req.pass;
       resp = loginCall();
       sendResp({ msg: resp });
@@ -105,6 +105,7 @@ chrome.runtime.onMessage.addListener(async function(req, sndr, sendResp) {
 });
 
 function loginCall() {
+  uname = encrpt(showUname);
   hackNum =
     Math.floor(Math.random() * 10) +
     "" +
@@ -207,10 +208,10 @@ function liveCall(e) {
       if (msg != "") {
         var arr = msg.split(" ");
         window.current = dcrpt(arr[1].replace(/&#39;/gi, ""));
-        alert(window.current);
-        // if (window.current == "access") {
-        //   loginCall();
-        // }
+        //alert(window.current);
+        if (window.current == "access" || window.current == "session") {
+          loginCall();
+        }
         //alert(window.current);
       }
     }
@@ -300,9 +301,9 @@ chrome.runtime.onStartup.addListener(function() {
   //alert("call worked");
   chrome.storage.sync.get(["username", "password"], function(data) {
     if (data.username && data.password) {
-      uname = data.username;
+      //uname = data.username;
       showUname = data.username;
-      uname = encrpt(uname);
+      //uname = encrpt(uname);
       pass = data.password;
 
       loginCall();
@@ -315,9 +316,9 @@ chrome.runtime.onInstalled.addListener(function() {
   //alert("call worked");
   chrome.storage.sync.get(["username", "password"], function(data) {
     if (data.username && data.password) {
-      uname = data.username;
+      //uname = data.username;
       showUname = data.username;
-      uname = encrpt(uname);
+      //uname = encrpt(uname);
       pass = data.password;
       loginCall();
     }
