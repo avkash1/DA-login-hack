@@ -17,3 +17,5 @@ No maximum login limit with this extension.
 That's it.
 Next time when you turn on the browser,
 it will automatically login with your id and there will be no maximum login limits.
+
+This is beta version. Do notify me if there is any problem.
