@@ -206,13 +206,23 @@ function liveCall(e) {
       var msg = myObj.getElementsByTagName("livemessage")[0].textContent;
       //alert(msg);
       if (msg != "") {
+        //alert(msg);
+        if (msg == "Timeout access auth service" || msg.includes("session")) {
+          //alert("msg : " + msg + " " + showUname + " " + atob(pass));
+          clearInterval(intervalLive);
+          intervalLive = false;
+          status = "login";
+          loginCall();
+          return 0;
+        }
         var arr = msg.split(" ");
         window.current = dcrpt(arr[1].replace(/&#39;/gi, ""));
         //alert(window.current);
-        if (window.current == "access" || window.current == "session") {
-          loginCall();
-        }
-        //alert(window.current);
+        // if (window.current == "access" || window.current == "session") {
+        //   alert("inside if, for login call. " + showUname + " " + atob(pass));
+        //   loginCall();
+        // }
+        //alert(window.current + " after if");
       }
     }
   };
